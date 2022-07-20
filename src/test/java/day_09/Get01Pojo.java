@@ -19,15 +19,15 @@ public class Get01Pojo extends HerOkuAppBaseUrl {
  		    Status code is 200
  		And
  		    Response body is like {
-    "firstname": "omto",
-    "lastname": "nena",
-    "totalprice": 112,
-    "depositpaid": true,
-    "bookingdates": {
-        "checkin": "2018-01-01",
-        "checkout": "2019-01-01"
+                "firstname": "omto",
+                "lastname": "nena",
+                "totalprice": 112,
+                "depositpaid": true,
+                "bookingdates": {
+                        "checkin": "2018-01-01",
+                        "checkout": "2019-01-01"
     },
-    "additionalneeds": "Breakfast"
+                "additionalneeds": "Breakfast"
 }
 */
 
@@ -44,6 +44,8 @@ public class Get01Pojo extends HerOkuAppBaseUrl {
 
         //4. Do Assertion
         BookingPojo actualPojo = response.as(BookingPojo.class);
+        Assert.assertEquals(200, response.getStatusCode());
+
         Assert.assertEquals(bookingPojo.getFirstname(), actualPojo.getFirstname());
         Assert.assertEquals(bookingPojo.getLastname(), actualPojo.getLastname());
         Assert.assertEquals(bookingPojo.getDepositpaid(), actualPojo.getDepositpaid());
