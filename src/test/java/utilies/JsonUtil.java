@@ -31,5 +31,17 @@ public class JsonUtil {
 
 
     //2. Method : Java objesini Json dataya cevirir (Serialization)
+    public static  String convertJavaObjectToJson (Object obj){
+
+       String jsonResult = null;
+        try {
+            jsonResult = mapper.writeValueAsString(obj);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return jsonResult;
+    }
+
 }
 
