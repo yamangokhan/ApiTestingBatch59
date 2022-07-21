@@ -11,7 +11,6 @@ import pojos.GoRestResponseBodyPojo;
 
 import static io.restassured.RestAssured.given;
 
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Get02Pojo extends GoRestBaseUrl {
 
     /*
